@@ -1,0 +1,8 @@
+REDIS:
+  CHANNEL: "ace"
+  HOST: "127.0.0.1"
+  PORT: 6379
+
+# This name must match the one present in your velocity config.yml
+# If set to 'properties' - will use the server name present in server.properties
+SERVER_NAME: "properties"
