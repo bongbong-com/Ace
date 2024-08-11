@@ -22,7 +22,7 @@ public class AcePlugin extends JavaPlugin {
                 getConfig().getInt("REDIS.PORT"), null, null);
 
         String serverName = getConfig().getString("SERVER_NAME");
-        if (serverName.equals("properties")) serverName = getServer().getServerName();
+        if (serverName.equals("properties")) serverName = getServer().getName();
 
         // Permissions stuff
         registerListener(new JoinListener(this));
