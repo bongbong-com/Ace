@@ -87,15 +87,11 @@
             <groupId>dev.simplix.cirrus</groupId>
             <artifactId>cirrus-velocity</artifactId>
             <version>3.0.0-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/cirrus-velocity-3.0.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>dev.simplix.cirrus</groupId>
             <artifactId>cirrus-api</artifactId>
             <version>3.0.0-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/cirrus-api-3.0.0-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 
@@ -133,6 +129,10 @@
                         <relocation>
                             <pattern>co.aikar.</pattern>
                             <shadedPattern>com.bongbong.ace.co.aikar.</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>dev.simplix.</pattern>
+                            <shadedPattern>com.bongbong.ace.dev.simplix.</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

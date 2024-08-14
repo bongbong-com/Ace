@@ -19,6 +19,11 @@ jobs:
           java-version: '20'
           distribution: 'adopt'
 
+      - name: Build Cirrus API
+        run: mvn install:install-file --Dfile=ace-velocity/libs/cirrus-api-3.0.0-SNAPSHOT.jar --DgroupId=dev.simplex.cirrus --DartifactId=cirrus-api --Dversion=3.0.0-SNAPSHOT --Dpackaging=jar --DgeneratePom=true
+      - name: Build Cirrus Velocity
+        run: mvn install:install-file --Dfile=ace-velocity/libs/cirrus-velocity-3.0.0-SNAPSHOT.jar --DgroupId=dev.simplex.cirrus --DartifactId=cirrus-velocity --Dversion=3.0.0-SNAPSHOT --Dpackaging=jar --DgeneratePom=true
+
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
