@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 @Plugin(
         id = "ace",
         name = "Ace",
-        version = "1.0-SNAPSHOT",
+        version = "${ace.desc}",
         description = "Network core (Profiles, Ranks, Punishments, etc)",
         url = "www.bongbong.com",
         authors = "tigerbong",
