@@ -25,7 +25,7 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: spigot-prod
+          name: ace-prod
           path: |
             ace-spigot/target/ace-spigot.jar
             ace-velocity/target/ace-velocity.jar
