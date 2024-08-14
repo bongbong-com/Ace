@@ -38,7 +38,6 @@ import java.util.logging.Logger;
         dependencies = {
                 @Dependency(id = "protocolize"),
                 @Dependency(id = "limboapi"),
-                @Dependency(id = "redisbungee")
         }
 )
 public class AcePlugin {
