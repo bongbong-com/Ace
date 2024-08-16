@@ -8,6 +8,8 @@ import com.bongbong.ace.velocity.network.NetworkManager;
 import com.bongbong.ace.velocity.profiles.ProfileManager;
 import com.bongbong.ace.velocity.staff.StaffManager;
 import com.bongbong.ace.velocity.utils.*;
+import com.google.common.io.Resources;
+import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -20,12 +22,17 @@ import com.velocitypowered.api.plugin.PluginContainer;
 import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
-import dev.simplix.cirrus.velocity.CirrusVelocity;
-import dev.simplix.cirrus.velocity.plugin.CirrusTestCommand;
+//import dev.simplix.cirrus.velocity.CirrusVelocity;
 import net.elytrium.limboapi.api.LimboFactory;
 import org.bson.UuidRepresentation;
+import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
+import java.util.Optional;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 @Plugin(
@@ -49,6 +56,7 @@ public class AcePlugin {
     public AcePlugin(ProxyServer server, Logger logger) {
         this.server = server;
         this.logger = logger;
+
     }
 
     @Subscribe
@@ -114,9 +122,9 @@ public class AcePlugin {
 
         LimboFactory limboFactory = (LimboFactory) server.getPluginManager()
                 .getPlugin("limboapi").flatMap(PluginContainer::getInstance).orElseThrow();
-
-        new CirrusVelocity(this, server, server.getCommandManager()).init();
-        server.getCommandManager().register("menu", new CirrusTestCommand());
+//
+//        new CirrusVelocity(this, server, server.getCommandManager()).init();
+//        server.getCommandManager().register("menu", new CirrusTestCommand());
 
         new ProfileManager(
                 taskScheduler, mongo, commandManager, playerFinder, locale, redisManager, registrar,

@@ -10,12 +10,12 @@ import com.bongbong.ace.shared.utils.TimeUtil;
 import com.bongbong.ace.velocity.staff.punishments.Punishment;
 import com.bongbong.ace.velocity.staff.punishments.PunishmentManager;
 import com.bongbong.ace.velocity.staff.punishments.PunishmentProfile;
-import com.bongbong.ace.velocity.staff.punishments.menus.HistoryMenu;
+//import com.bongbong.ace.velocity.staff.punishments.menus.HistoryMenu;
 import com.bongbong.ace.velocity.utils.Colors;
 import com.bongbong.ace.velocity.utils.OfflinePlayer;
 import com.bongbong.ace.velocity.utils.PlayerFinder;
 import com.velocitypowered.api.proxy.Player;
-import dev.simplix.cirrus.velocity.wrapper.VelocityPlayerWrapper;
+//import dev.simplix.cirrus.velocity.wrapper.VelocityPlayerWrapper;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.event.HoverEvent;
 
@@ -42,9 +42,9 @@ public class HistoryCommand extends BaseCommand {
         if (issuerPlayer != null && (chatToggle == null || !chatToggle.contains("-dump"))) {
             TreeMap<Date, Punishment> map = new TreeMap<>();
             for (Punishment punishment : punishments) map.put(punishment.getIssued(), punishment);
-
-            VelocityPlayerWrapper velocityPlayerWrapper = new VelocityPlayerWrapper(issuerPlayer);
-            new HistoryMenu(playerFinder, map).display(velocityPlayerWrapper);
+//
+//            VelocityPlayerWrapper velocityPlayerWrapper = new VelocityPlayerWrapper(issuerPlayer);
+//            new HistoryMenu(playerFinder, map).display(velocityPlayerWrapper);
             return;
         }
 
