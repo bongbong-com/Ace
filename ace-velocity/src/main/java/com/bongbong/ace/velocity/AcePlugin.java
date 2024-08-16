@@ -133,7 +133,7 @@ public class AcePlugin {
                 mongo, playerFinder, commandManager, redisManager, registrar, broadcaster, settings,
                 logger);
         new NetworkManager(
-                limboFactory, dataDirectory, server.getServer("test").get(), commandManager, playerFinder
+                limboFactory, dataDirectory, server.getServer("factions").get(), commandManager, playerFinder
         );
     }
 }
