@@ -28,8 +28,8 @@ public class NetworkManager {
         );
 
         try {
-            Path path = dataDirectory.resolve("world.nbt");
-            WorldFile file = factory.openWorldFile(BuiltInWorldFileType.STRUCTURE, path);
+            Path path = dataDirectory.resolve("world.schem");
+            WorldFile file = factory.openWorldFile(BuiltInWorldFileType.SCHEMATIC, path);
 
             file.toWorld(factory, authWorld, 0, 90, 0, 15);
         } catch (IOException e) {
