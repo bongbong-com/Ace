@@ -28,7 +28,7 @@ public class NetworkManager {
         );
 
         try {
-            Path path = dataDirectory.resolve("world.schem");
+            Path path = dataDirectory.resolve("world.schematic");
             WorldFile file = factory.openWorldFile(BuiltInWorldFileType.SCHEMATIC, path);
 
             file.toWorld(factory, authWorld, 0, 90, 0, 15);
