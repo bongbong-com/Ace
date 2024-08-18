@@ -15,25 +15,27 @@ import java.util.UUID;
 public class ProfileListener {
     private final ProfileManager profileManager;
 
-    @Subscribe(order = PostOrder.EARLY)
-    public void onFirstLogin(LoginEvent event) {
-        Player player = event.getPlayer();
-        UUID uuid = player.getUniqueId();
 
-        if (profileManager.isProfileCached(uuid)) {
-            event.setResult(ResultedEvent.ComponentResult.denied(
-                    Component.text("Your profile is already loaded, please relog! (Err Code: ACE1)")));
-
-            Profile profile = profileManager.getProfile(uuid);
-
-            if (profile == null) profileManager.removeProfile(uuid);
-            else profileManager.pushProfile(profile, true);
-
-            return;
-        }
-
-        if (profileManager.pullProfile(uuid, true) == null) profileManager.createProfile(uuid);
-    }
+// this step is already handled somewhere else - probably RankListener.
+//    @Subscribe(order = PostOrder.EARLY)
+//    public void onFirstLogin(LoginEvent event) {
+//        Player player = event.getPlayer();
+//        UUID uuid = player.getUniqueId();
+//
+//        if (profileManager.isProfileCached(uuid)) {
+//            event.setResult(ResultedEvent.ComponentResult.denied(
+//                    Component.text("Your profile is already loaded, please relog! (Err Code: ACE1)")));
+//
+//            Profile profile = profileManager.getProfile(uuid);
+//
+//            if (profile == null) profileManager.removeProfile(uuid);
+//            else profileManager.pushProfile(profile, true);
+//
+//            return;
+//        }
+//
+//        if (profileManager.pullProfile(uuid, true) == null) profileManager.createProfile(uuid);
+//    }
 
     @Subscribe(order = PostOrder.LAST)
     public void onLastLogin(LoginEvent event) {

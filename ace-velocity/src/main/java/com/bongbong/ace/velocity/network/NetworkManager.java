@@ -27,9 +27,15 @@ public class NetworkManager {
                 (float) 180, (float) 0
         );
 
+        // in order to create an NBT file, use FAWE and do //schem save <name> structure
+        // then use this file and rename it to "world.nbt" and place it in ace plugin folder.
+        // you will need to set the spawn location above since structure files have 0,0 at the
+        // corner of the build. I don't currently know of a way to generate a structure file
+        // with centered 0,0.
+
         try {
-            Path path = dataDirectory.resolve("world.schematic");
-            WorldFile file = factory.openWorldFile(BuiltInWorldFileType.SCHEMATIC, path);
+            Path path = dataDirectory.resolve("world.nbt");
+            WorldFile file = factory.openWorldFile(BuiltInWorldFileType.STRUCTURE, path);
 
             file.toWorld(factory, authWorld, 0, 90, 0, 15);
         } catch (IOException e) {
